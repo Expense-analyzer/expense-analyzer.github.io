@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <title>Expense supplier dashboard</title>
+    <link rel="icon" href="logo2.png">
+    <meta name="theme-color" content="#174ed9">
+    <style>
+      body ,html{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+      @media screen and (max-width:750px)  {
+        #page{
+          width: 100% !important;
+        }
+      }
+      #page{
+        width: 70%;
+        padding: 10px;
+      }
+      table{
+        width: 100%;
+      }
+    th{
+        padding: 10px;
+    }
+    td{
+        padding: 10px;
+        outline: none;
+    }
+    td, th {
+        border: 1px solid #dbdbdb;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #d8eeff;
+    }
+    a{
+          text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light p-2 fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="logo.png" alt="" width="100"  class="d-inline-block align-text-top">
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" >
+            <a class="nav-link"   aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://porbet.github.io/opensource/contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://porbet.github.io/opensource/privacy.html">Privacy Policy</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Social media
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="https://www.instagram.com/porbe_t/">Instagram</a></li>
+              <li><a class="dropdown-item" href="https://www.youtube.com/channel/UCCjx1r99pZxmtfVVF8tF48Q">Youtube</a></li>
+              <li><a class="dropdown-item" href="https://github.com/Adil-production">Github</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 style="color: rgb(0, 89, 255); margin: 20px;"><strong>Hello,</strong> <span id="name"></span></h1>
+      <br>
+      <br>
+      <nav class="nav nav-pills justify-content-center m-3">
+        <a class="nav-link" aria-current="page" href="clientDashboard.html">Client</a>
+        <a class="nav-link active" href="supplierDashboard.html">Suppliers</a>
+        <a class="nav-link" href="materialDashboard.html">Materials</a>
+      </nav>
+      <br>
+
+<div align="center">
+<div id="page" align="left">
+      <div align="right">
+        <button class="btn btn-primary" id="add">Add new row</button>
+        <button class="btn btn-primary m-2" style="display: none;" id="recreate">Recreate table</button><button class="btn btn-outline-primary m-2" style="display: none;" id="add2">Add new row</button>
+      </div>
+      <br>
+      <br>
+      <div id="informations">
+      <h3 style="color: rgb(0, 89, 255);"><span>Supplier key</span></h3>
+      <br>
+      <div id="supplierKey" align="center">
+        <div class="form-floating mb-3">
+          <input type="text"  class="form-control" name="supplierKeyValue"  value="">
+          <label for="floatingInput">Supplier key</label>
+        </div>
+        <br>
+      </div>
+
+
+      <br>
+      <br>
+      <h3 style="color: rgb(0, 89, 255);"><span>Supplier Name</span></h3>
+      <br>
+      <div id="supplierName" align="center">
+        <div class="form-floating mb-3">
+          <input type="text"  class="form-control" name="supplierNameValue"  value="">
+          <label for="floatingInput">Supplier name</label>
+        </div>
+        <br>
+      </div>
+
+
+
+      <br>
+      <br>
+      <h3 style="color: rgb(0, 89, 255);"><span>Phone number</span></h3>
+      <br>
+      <div id="phoneNumber" align="center">
+        <div class="form-floating mb-3 ">
+          <input type="text"  class="form-control" name="phoneNumberValue"  value="">
+          <label for="floatingInput">Phone number</label>
+        </div>
+        <br>
+      </div>
+
+
+
+
+
+      <br>
+      <br>
+      <h3 style="color: rgb(0, 89, 255); "><span>The address</span></h3>
+      <br>
+      <div id="address" align="center">
+        <div class="form-floating mb-3 ">
+          <input type="text"  class="form-control" name="addressValue"  value="">
+          <label for="floatingInput">The address</label>
+        </div>
+        <br>
+      </div>
+
+
+
+
+
+
+      <br>
+      <br>
+      <h3 style="color: rgb(0, 89, 255); "><span>Total purchases</span></h3>
+      <br>
+      <div id="totalPurchases" align="center">
+        <div class="form-floating mb-3">
+          <input type="text"  class="form-control" name="totalPurchasesValue"  value="">
+          <label for="floatingInput">Total purchases</label>
+        </div>
+        <br>
+      </div>
+
+
+
+
+
+
+
+      <br>
+      <br>
+      <h3 style="color: rgb(0, 89, 255); "><span>Notes</span></h3>
+      <br>
+      <div id="notes" align="center">
+        <div class="form-floating mb-3 ">
+          <input type="text"  class="form-control" name="notesValue"  value="">
+          <label for="floatingInput">Notes</label>
+        </div>
+        <br>
+      </div>
+
+      <div align="right">
+        <br>
+        <button class="btn btn-primary" id="parse">Parse</button>
+      </div>
+
+</div>
+</div>
+</div>
+
+
+
+
+      <div id="tableEx">
+
+      </div>
+
+        <br>
+        <br>
+        <div align="right" id="install" style="display: none;" class="m-3">
+          <button class="btn btn-outline-success m-2" id="save">Save</button><button class="btn btn-success m-2" id="download" onclick="ExportToExcel('xlsx')">Download Excel file</button>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer class="text-center text-lg-start bg-light text-muted p-3">
+      
+          <!-- Section: Social media -->
+        
+          <!-- Section: Links  -->
+          <section class="">
+            <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    <i class="fas fa-gem me-3"></i>Porbet
+                  </h6>
+                  <p>
+                    Porbet , a company that makes something out of nothing
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Products
+                  </h6>
+                  <p>
+                    <a href="https://porbet.github.io/cytocyber/" class="text-reset">Cytocyber</a>
+                  </p>
+                  <p>
+                    <a href="https://porbet.github.io/streamjs/" class="text-reset">Strean.js</a>
+                  </p>
+                  <p>
+                    <a href="https://porbet.github.io/opensource/" class="text-reset">Porbet keep</a>
+                  </p>
+                  <p>
+                    <a href="https://porbet.github.io/opensource/" class="text-reset">Porbet todo</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Useful links
+                  </h6>
+                  <p>
+                    <a href="index.html" class="text-reset">Home</a>
+                  </p>
+                  <p>
+                    <a href="https://porbet.github.io/store/" class="text-reset">Store</a>
+                  </p>
+                  <p>
+                    <a href="contact.html" class="text-reset">Contact</a>
+                  </p>
+                  <p>
+                    <a href="privacy.html" class="text-reset">Privacy</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Contact
+                  </h6>
+                  <p><i class="fas fa-home me-3"></i> Nador, Morocco</p>
+                  <p>
+                    <i class="fas fa-envelope me-3"></i>
+                    porbet.contact@gmail.com
+                  </p>
+                  <p><i class="fas fa-phone me-3"></i> + 212 638 397 172</p>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
+          <!-- Section: Links  -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-4" >
+            © 2022 Copyright:
+            <a class="text-reset fw-bold" href="http://opensource-porbet.ga/">opensource-porbet.ga</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+      <script>
+        document.getElementById("name").innerHTML = localStorage.getItem("name");
+
+        // Add new row
+        document.getElementById("add").addEventListener("click",function(){
+          document.getElementById("supplierKey").innerHTML += `
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="supplierKeyValue"  value="">
+            <label for="floatingInput">Supplier key</label>
+          </div>
+          <br>
+          `
+          document.getElementById("supplierName").innerHTML += `
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="supplierNameValue"  value="">
+            <label for="floatingInput">Supplier name</label>
+          </div>
+          <br>
+          `
+          document.getElementById("phoneNumber").innerHTML += `
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="phoneNumberValue"  value="">
+            <label for="floatingInput">Phone number</label>
+          </div>
+          <br>
+          `
+          document.getElementById("address").innerHTML += `
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="addressValue"  value="">
+            <label for="floatingInput">The address</label>
+          </div>
+          <br>
+          `
+          document.getElementById("totalPurchases").innerHTML += `
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="totalPurchasesValue"  value="">
+            <label for="floatingInput">Total purchases</label>
+          </div>
+          <br>
+          `
+          document.getElementById("notes").innerHTML += `
+          <div class="form-floating mb-3 ">
+            <input type="text" class="form-control" name="notesValue"  value="">
+            <label for="floatingInput">Notes</label>
+          </div>
+          <br>
+          `
+        })
+
+        document.getElementById("parse").addEventListener("click",function(){
+          var supplierName = document.getElementsByName('supplierNameValue');
+          var supplierKey = document.getElementsByName('supplierKeyValue');
+          var phoneNumber = document.getElementsByName('phoneNumberValue');
+          var address = document.getElementsByName('addressValue');
+          var totalPurchases = document.getElementsByName('totalPurchasesValue');
+          var notes = document.getElementsByName('notesValue');
+          var supplierKeyValue = [];
+          var supplierNameValue = [];
+          var phoneNumberValue = [];
+          var addressValue = [];
+          var totalPurchasesValue = [];
+          var notesValue = [];
+          for (var i = 0; i < supplierKey.length; i++) {
+              var a = supplierKey[i].value;
+              supplierKeyValue.push(a);
+          }
+          for (var i = 0; i < supplierName.length; i++) {
+              var a = supplierName[i].value;
+              supplierNameValue.push(a);
+          }
+          for (var i = 0; i < phoneNumber.length; i++) {
+              var a = phoneNumber[i].value;
+              phoneNumberValue.push(a);
+          }
+          for (var i = 0; i < address.length; i++) {
+              var a = address[i].value;
+              addressValue.push(a);
+          }
+          for (var i = 0; i < totalPurchases.length; i++) {
+              var a = totalPurchases[i].value;
+              totalPurchasesValue.push(a);
+          }
+          for (var i = 0; i < notes.length; i++) {
+              var a = notes[i].value;
+              notesValue.push(a);
+          }
+
+
+          console.log(supplierKeyValue);
+          console.log(supplierNameValue);
+          console.log(phoneNumberValue);
+          console.log(addressValue);
+          console.log(totalPurchasesValue);
+          console.log(notesValue);
+
+
+        var customers = new Array();
+        customers.push(["Supplier key", "Supplier Name", "Phone number", "Address", "Total purchases", "Notes"]);
+        for(var i = 0; i < notes.length; i++){
+          customers.push([supplierKeyValue[i], supplierNameValue[i] , phoneNumberValue[i], addressValue[i], totalPurchasesValue[i], notesValue[i] ]);
+        }
+        //Create a HTML Table element.
+        var table = document.createElement("TABLE");
+        table.setAttribute("id","table");
+        table.border = "1";
+ 
+        //Get the count of columns.
+        var columnCount = customers[0].length;
+ 
+        //Add the header row.
+        var row = table.insertRow(-1);
+        for (var i = 0; i < columnCount; i++) {
+            var headerCell = document.createElement("TH");
+            headerCell.innerHTML = customers[0][i];
+            row.appendChild(headerCell);
+        }
+ 
+        //Add the data rows.
+        for (var i = 1; i < customers.length; i++) {
+            row = table.insertRow(-1);
+            for (var j = 0; j < columnCount; j++) {
+                var cell = row.insertCell(-1);
+                cell.contentEditable = "true";
+                cell.innerHTML = customers[i][j];
+            }
+        }
+ 
+        var dvTable = document.getElementById("tableEx");
+        dvTable.innerHTML = "";
+        dvTable.appendChild(table);
+        localStorage.setItem("supplierTable",document.getElementById("tableEx").innerHTML)
+
+
+
+        document.getElementById("informations").style.display = "none";
+        document.getElementById("add").style.display = "none";
+        document.getElementById("recreate").style.display = "inline-block";
+        document.getElementById("add2").style.display = "inline-block";
+        document.getElementById("install").style.display = "block";
+
+      
+        })
+        //recreate table
+        document.getElementById("recreate").addEventListener("click",function(){
+          localStorage.removeItem("supplierTable");
+          window.location.reload();
+        })
+        //save table
+        document.getElementById("save").addEventListener("click",function(){
+          localStorage.setItem("supplierTable",document.getElementById("tableEx").innerHTML)
+          alert("Saved")
+        })
+        //add new row table
+        document.getElementById("add2").addEventListener("click",function(){
+          document.getElementsByTagName("tbody")[0].innerHTML += `
+              <tr>
+                <td contentEditable="true"></td>
+                <td contentEditable="true"></td>
+                <td contentEditable="true"></td>
+                <td contentEditable="true"></td>
+                <td contentEditable="true"></td>
+                <td contentEditable="true"></td>
+              </tr>
+          `
+        })
+
+
+
+      window.addEventListener('load', (event) => {
+          var table = localStorage.getItem("supplierTable")
+          if(table){
+            document.getElementById("informations").style.display = "none";
+            document.getElementById("add").style.display = "none";
+            document.getElementById("tableEx").innerHTML = table;
+            document.getElementById("recreate").style.display = "inline-block";
+            document.getElementById("add2").style.display = "inline-block";
+            document.getElementById("install").style.display = "block";
+          } else{
+            document.getElementById("informations").style.display = "block";
+            document.getElementById("add").style.display = "block";
+            document.getElementById("recreate").style.display = "none";
+            document.getElementById("add2").style.display = "none";
+            document.getElementById("install").style.display = "none";
+          }
+        }); 
+
+        function ExportToExcel(type, fn, dl) {
+            var elt = document.getElementById('table');
+            var wb = XLSX.utils.table_to_book(elt, { sheet: "supplier" });
+            return dl ?
+              XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
+              XLSX.writeFile(wb, fn || (localStorage.getItem("company") + ' supplier.' + (type || 'xlsx')));
+        }
+
+
+      </script>
+</body>
+</html>
