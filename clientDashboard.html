@@ -10,6 +10,7 @@
     <title>Expense client dashboard</title>
     <link rel="icon" href="logo2.png">
     <meta name="theme-color" content="#174ed9">
+    
     <style>
       body ,html{
         width: 100%;
@@ -43,7 +44,7 @@
     }
 
     tr:nth-child(even) {
-        background-color: #d8eeff;
+        background-color: #dbffd8;
     }
     a{
         text-decoration: none;
@@ -51,10 +52,10 @@
     </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light p-2 fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white p-2 fixed-top" style="box-shadow: 0px 5px 10px -5px rgb(199, 206, 211);">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="logo.png" alt="" width="100"  class="d-inline-block align-text-top">
+        <img src="logo.png" alt="" width="150"  class="d-inline-block align-text-top">
         </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -88,26 +89,26 @@
       <br>
       <br>
       <br>
-      <h1 style="color: rgb(0, 89, 255); margin: 20px;"><strong>Hello,</strong> <span id="name"></span></h1>
+      <h1 style="color: #3c995b; margin: 20px;"><strong>Hello,</strong> <span id="name"></span></h1>
       <br>
       <br>
       <nav class="nav nav-pills justify-content-center m-3">
-        <a class="nav-link active" aria-current="page" href="clientDashboard.html">Client</a>
-        <a class="nav-link" href="supplierDashboard.html">Suppliers</a>
-        <a class="nav-link" href="materialDashboard.html">Materials</a>
+        <a class="nav-link active bg-success" aria-current="page" href="clientDashboard.html">Client</a>
+        <a class="nav-link text-success" href="supplierDashboard.html">Suppliers</a>
+        <a class="nav-link text-success" href="materialDashboard.html">Materials</a>
       </nav>
       <br>
 
 <div align="center">
 <div id="page" align="left">
       <div align="right">
-        <button class="btn btn-primary" id="add">Add new row</button>
-        <button class="btn btn-primary m-2" style="display: none;" id="recreate">Recreate table</button><button class="btn btn-outline-primary m-2" style="display: none;" id="add2">Add new row</button>
+        <button class="btn btn-success m-2" style="display: inline-block;" id="add">Add new row</button><button class="btn btn-outline-success m-2" style="display: inline-block;" id="workontable" onclick="parse()">Work on table</button>
+        <button class="btn btn-success m-2" style="display: none;" id="recreate">Recreate table</button><button class="btn btn-outline-success m-2" style="display: none;" id="add2">Add new row</button>
       </div>
       <br>
       <br>
       <div id="informations">
-      <h3 style="color: rgb(0, 89, 255);"><span>Client key</span></h3>
+      <h3 style="color: black; font-weight: bold;"><span>Client key</span></h3>
       <br>
       <div id="clientKey" align="center">
         <div class="form-floating mb-3">
@@ -120,7 +121,7 @@
 
       <br>
       <br>
-      <h3 style="color: rgb(0, 89, 255);"><span>Client Name</span></h3>
+      <h3 style="color: #000000; font-weight: bold;"><span>Client Name</span></h3>
       <br>
       <div id="clientName" align="center">
         <div class="form-floating mb-3">
@@ -134,7 +135,7 @@
 
       <br>
       <br>
-      <h3 style="color: rgb(0, 89, 255);"><span>Phone number</span></h3>
+      <h3 style="color: #000000; font-weight: bold;"><span>Phone number</span></h3>
       <br>
       <div id="phoneNumber" align="center">
         <div class="form-floating mb-3 ">
@@ -150,7 +151,7 @@
 
       <br>
       <br>
-      <h3 style="color: rgb(0, 89, 255); "><span>The address</span></h3>
+      <h3 style="color: #000000; font-weight: bold;"><span>The address</span></h3>
       <br>
       <div id="address" align="center">
         <div class="form-floating mb-3 ">
@@ -167,7 +168,7 @@
 
       <br>
       <br>
-      <h3 style="color: rgb(0, 89, 255); "><span>Total purchases</span></h3>
+      <h3 style="color: #000000; font-weight: bold;"><span>Total purchases</span></h3>
       <br>
       <div id="totalPurchases" align="center">
         <div class="form-floating mb-3">
@@ -185,7 +186,7 @@
 
       <br>
       <br>
-      <h3 style="color: rgb(0, 89, 255); "><span>Notes</span></h3>
+      <h3 style="color: #000000; font-weight: bold;"><span>Notes</span></h3>
       <br>
       <div id="notes" align="center">
         <div class="form-floating mb-3 ">
@@ -197,7 +198,7 @@
 
       <div align="right">
         <br>
-        <button class="btn btn-primary" id="parse">Parse</button>
+        <button class="btn btn-success" onclick="parse()" id="parse">Parse</button>
       </div>
 
 </div>
@@ -207,9 +208,8 @@
 
 
 
-      <div id="tableEx">
 
-      </div>
+      <div id="tableEx"></div>
 
         <br>
         <br>
@@ -362,7 +362,7 @@
           `
         })
 
-        document.getElementById("parse").addEventListener("click",function(){
+        function parse(){
           var clientName = document.getElementsByName('clientNameValue');
           var clientKey = document.getElementsByName('clientKeyValue');
           var phoneNumber = document.getElementsByName('phoneNumberValue');
@@ -449,12 +449,13 @@
 
         document.getElementById("informations").style.display = "none";
         document.getElementById("add").style.display = "none";
+        document.getElementById("workontable").style.display = "none";
         document.getElementById("recreate").style.display = "inline-block";
         document.getElementById("add2").style.display = "inline-block";
         document.getElementById("install").style.display = "block";
 
       
-        })
+        }
         //recreate table
         document.getElementById("recreate").addEventListener("click",function(){
           localStorage.removeItem("clientTable");
@@ -486,13 +487,15 @@
           if(table){
             document.getElementById("informations").style.display = "none";
             document.getElementById("add").style.display = "none";
+            document.getElementById("workontable").style.display = "none";
             document.getElementById("tableEx").innerHTML = table;
             document.getElementById("recreate").style.display = "inline-block";
             document.getElementById("add2").style.display = "inline-block";
             document.getElementById("install").style.display = "block";
           } else{
             document.getElementById("informations").style.display = "block";
-            document.getElementById("add").style.display = "block";
+            document.getElementById("add").style.display = "inline-block";
+            document.getElementById("workontable").style.display = "inline-block";
             document.getElementById("recreate").style.display = "none";
             document.getElementById("add2").style.display = "none";
             document.getElementById("install").style.display = "none";
