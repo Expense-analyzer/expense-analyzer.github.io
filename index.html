@@ -11,6 +11,7 @@
     <link rel="icon" href="logo2.png">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM0ZDJCQKW"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -35,13 +36,27 @@
         a{
           text-decoration: none;
         }
+        #banner{
+          background-color: black;
+          padding: 150px;
+          margin: 20px;
+          border-radius: 10px;
+          background-image: url("background.jpg");
+          background-repeat: no-repeat, repeat;
+
+        }
+        @media only screen and (max-width: 760px) {
+            #banner{
+              padding: 25px !important;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-2 fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white p-2 fixed-top" style="box-shadow: 0px 5px 10px -5px rgb(199, 206, 211);">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="logo.png" alt="" width="100"  class="d-inline-block align-text-top">
+            <img src="logo.png" alt="" width="150"  class="d-inline-block align-text-top">
             </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -74,22 +89,40 @@
       <br>
       <br>
       <br>
-      <div id="all" style="z-index: auto; margin: 100px;"  align="center">
-        <div style="display: inline-block; transform: translateY(15%);" align="center" id="one">
-            <div  align="left" class="m-2">
-                <h1 style="font-size: 58px;" id="title">Boost <strong>Accounting</strong> period.</h1>
-                <br>
-                          <span style="color:gray;">A very basic way to account your<br> small business</span>
-                <span style="color:gray;"></span>
-            </div>
-            <br>
-            <br>
-            <div align="center">
-                <a href="informations.html"><button class="btn btn-success m-3 ">Get started now</button></a><a href="dashboard2.html"><button class="btn btn-outline-success m-3">Import Excel file</button></a>
-            </div>
-            <br>
+      <div style="" id="banner">
+        <h1 style="font-size: 45px; font-weight: normal !important; color: white;"><strong>Expense</strong>: Boost Accounting period within </h1>
+        <br>
+        <span  style="font-size: 15px; display: inline-block; color: rgb(189, 189, 189); width: 50%;" id="description" >Do you search for free and a fast way to account your small business ? You're in the right place ! Discover the process by clicking <strong>Get Started</strong> below .</span>
+        <br>
+        <br>
+        <br>
+        <div id="getstarted" align="center">
+            <a href="informations.html" class="mar-1"><button class="btn btn-success" >Get started</button></a> &nbsp; <a href="dashboard2.html" class="mar-1" download ><button class="btn btn-outline-success">Import Excel file</button></a>
         </div>
-  </div>
+      </div>
+      <div id="all" style="z-index: auto; margin: 100px;"  align="center">
+        <div class="d-inline-block" style="margin: 15px; padding: 35px;" align="center">
+          <span class="material-symbols-outlined" style="color: #3c995b; font-size: 100px;">
+            touch_app
+          </span>
+          <br>
+          <span style="font-size: 25px; ">100% <strong>responsive</strong></span><br><span style="color: gray; font-size: 15px;">cross mobile-platfoms</span>
+        </div>
+        <div class="d-inline-block" style="margin: 15px; padding: 35px;" align="center">
+          <span class="material-symbols-outlined" style="color: #3c995b; font-size: 100px;">
+            bolt
+          </span>
+          <br>
+            <span style="font-size: 25px;  ">Speeds <strong>development</strong></span><br><span style="color: gray; font-size: 15px;">We always trying to make Cytocyber faster to use</span>
+        </div>
+        <div class="d-inline-block" style="transform: translateY(10%); margin: 15px; padding: 35px;" align="center">
+          <span class="material-symbols-outlined" style="color: #3c995b; font-size: 100px;">
+            workspace_premium
+          </span>
+          <br>
+            <span style="font-size: 25px;  ">#1 in <strong>Morocco</strong></span><br><span style="color: gray; font-size: 15px;">The first CSS framework<br> in Morocco ever made</span>
+        </div>
+      </div>
   <br>
   <br>
   <br>
@@ -186,6 +219,6 @@
     </div>
     <!-- Copyright -->
   </footer>
-  <img src="back.png" style="position: absolute; top: 0; left: 0; z-index: -1; width: 100%; height : 100%; object-fit : cover;opacity: 0.2;-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));" />
+  
 </body>
 </html>
