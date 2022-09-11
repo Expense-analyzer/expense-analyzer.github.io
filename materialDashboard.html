@@ -233,7 +233,7 @@
 
       <div align="right">
         <br>
-        <button class="btn btn-success" id="parse">Parse</button>
+        <button class="btn btn-success" id="parse" onclick="parse()">Parse</button>
       </div>
 
 </div>
@@ -412,7 +412,7 @@
           `
         })
 
-        document.getElementById("parse").addEventListener("click",function(){
+        function parse(){
           var articleCode = document.getElementsByName('articleCodeValue');
           var category = document.getElementsByName('categoryValue');
           var subjectName = document.getElementsByName('subjectNameValue');
@@ -517,7 +517,7 @@
         document.getElementById("install").style.display = "block";
 
       
-        })
+        }
         //recreate table
         document.getElementById("recreate").addEventListener("click",function(){
           localStorage.removeItem("materialTable");
