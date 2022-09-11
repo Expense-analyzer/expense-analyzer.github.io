@@ -197,7 +197,7 @@
 
       <div align="right">
         <br>
-        <button class="btn btn-success" id="parse">Parse</button>
+        <button class="btn btn-success" id="parse" onclick="parse()">Parse</button>
       </div>
 
 </div>
@@ -362,7 +362,7 @@
           `
         })
 
-        document.getElementById("parse").addEventListener("click",function(){
+        function parse(){
           var supplierName = document.getElementsByName('supplierNameValue');
           var supplierKey = document.getElementsByName('supplierKeyValue');
           var phoneNumber = document.getElementsByName('phoneNumberValue');
@@ -455,7 +455,7 @@
         document.getElementById("install").style.display = "block";
 
       
-        })
+        }
         //recreate table
         document.getElementById("recreate").addEventListener("click",function(){
           localStorage.removeItem("supplierTable");
