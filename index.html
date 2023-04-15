@@ -20,6 +20,97 @@
       gtag('config', 'G-BM0ZDJCQKW');
     </script>
     <style>
+      .footer-distributed {
+    border-radius: 00px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  border-top: 0.2px solid rgb(206, 206, 206);
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+}
+.copy{
+    background: -webkit-linear-gradient(90deg, rgb(33, 155, 43) 50%, rgb(7, 110, 12) 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+}
+.footer-distributed .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #33383b;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease .25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #616161;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
+}
+
+.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
       #meet{
         text-decoration: none;
         color: rgb(0, 143, 0);
@@ -50,6 +141,29 @@
               padding: 25px !important;
             }
         }
+        @media only screen and (max-width: 870px) {
+    #img-container{
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    #imgcon{
+      width: 320px !important;
+    }
+    #par-container{
+      width: 100% !important;
+    }
+}
+
+#img-container{
+  margin-bottom: 0px;
+  display: inline-block;
+}
+#par-container{
+  transform: translateY(15%);
+  padding: 10px;
+  display: inline-block;
+  width: 40% ;
+}
     </style>
 </head>
 <body>
@@ -97,7 +211,7 @@
         <br>
         <br>
         <div id="getstarted" align="center">
-            <a href="informations.html" class="mar-1"><button class="btn btn-success" >Get started</button></a> &nbsp; <a href="dashboard2.html" class="mar-1" download ><button class="btn btn-outline-success">Import Excel file</button></a>
+            <a href="informations.html" class="mar-1"><button class="btn btn-success" >Get started</button></a> &nbsp; <a href="dashboard2.html" class="mar-1" ><button class="btn btn-outline-success">Import Excel file</button></a>
         </div>
       </div>
       <div id="all" style="z-index: auto; margin: 30px;"  align="center">
@@ -127,98 +241,40 @@
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <footer class="text-center text-lg-start bg-light text-muted p-3">
-
-    <!-- Section: Social media -->
-  
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Porbet
-            </h6>
-            <p>
-              Porbet , a company that makes something out of nothing
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Products
-            </h6>
-            <p>
-              <a href="https://porbet.github.io/cytocyber/" class="text-reset">Cytocyber</a>
-            </p>
-            <p>
-              <a href="https://porbet.github.io/expense/" class="text-reset">Expense</a>
-            </p>
-            <p>
-              <a href="https://porbet.github.io/opensource/" class="text-reset">Porbet keep</a>
-            </p>
-            <p>
-              <a href="https://porbet.github.io/opensource/" class="text-reset">Porbet todo</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
-            </h6>
-            <p>
-              <a href="index.html" class="text-reset">Home</a>
-            </p>
-            <p>
-              <a href="https://porbet.github.io/store/" class="text-reset">Store</a>
-            </p>
-            <p>
-              <a href="contact.html" class="text-reset">Contact</a>
-            </p>
-            <p>
-              <a href="privacy.html" class="text-reset">Privacy</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Contact
-            </h6>
-            <p><i class="fas fa-home me-3"></i> Nador, Morocco</p>
-            <p>
-              <i class="fas fa-envelope me-3"></i>
-              porbet.contact@gmail.com
-            </p>
-            <p><i class="fas fa-phone me-3"></i> + 212 638 397 172</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-4" >
-      © 2022 Copyright:
-      <a class="text-reset fw-bold" href="http://opensource-porbet.ga/">opensource-porbet.ga</a>
+  <div align="center" id="alcontainer">
+    <div id="img-container"><img src="download.png" id="imgcon" width="500px"></div>
+    <div id="par-container">
+      <h1>
+        <span class="material-symbols-outlined" style="font-size: 33px; margin: 10px; transform: translateY(10%); background: linear-gradient(90deg, #6aa37b 0%, #373a37 70%); -webkit-background-clip: text;  -webkit-text-fill-color: transparent;">
+          auto_fix_high
+        </span>
+        <strong> Fast and quick. </strong></h1>
+      <span style="color: gray;">Fast and quick accounting is essential for businesses looking to stay ahead in today's fast-paced market. With an efficient accounting process in place, financial information can be processed quickly, allowing for timely decision-making and improved business performance. </span>
     </div>
-    <!-- Copyright -->
-  </footer>
+  </div>
+  <br>
+  <br><br><br>
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+        
+        <img src="logo.png" width="150px">
+
+    </div>
+
+    <div class="footer-left">
+
+        <p class="footer-links">
+            <a class="link-1" href="index.html">Home</a>
+
+            <a href="about.html">About us</a>
+
+            <a href="https://porbet.github.io/contact.html">Contact us</a>
+        </p>
+
+        <p class="copy" style="font-weight:bold ;" >Made with ♥ by Porbet © 2023</p>
+    </div>
+</footer>
   
 </body>
 </html>
