@@ -11,11 +11,104 @@
     <link rel="icon" href="logo2.png">
     <meta name="theme-color" content="#44ac67">
     <style>
+            .footer-distributed {
+    border-radius: 00px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  border-top: 0.2px solid rgb(206, 206, 206);
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+}
+.copy{
+    background: -webkit-linear-gradient(90deg, rgb(33, 155, 43) 50%, rgb(7, 110, 12) 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+}
+.footer-distributed .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #33383b;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease .25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #616161;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
+}
+
+.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
       body ,html{
         width: 100%;
         height: 100%;
         margin: 0px;
         padding: 0px;
+        background-image: url("back.png"); 
+        background-repeat: no-repeat;
       }
       @media screen and (max-width:750px)  {
         #page{
@@ -37,21 +130,34 @@
         outline: none;
     }
     td, th {
-        border: 1px solid #dbdbdb;
+        border: 1px solid #c9c9c9;
         text-align: left;
         padding: 8px;
     }
 
     tr:nth-child(even) {
-        background-color: #dbffd8;
+      background: rgb(178,255,195);
+      background: linear-gradient(90deg, rgb(206, 255, 216) 0%, rgba(222,255,220,1) 100%);
     }
     a{
           text-decoration: none;
         }
+        .cus{
+        padding: 8px;
+        width: 190px;
+        text-align: center;
+        border: 0.4px solid rgb(68, 68, 68);
+        border-radius: 50px;
+        right: 10px;
+        
+        justify-content: right; 
+        text-decoration: none;
+        transition: 0.2s;
+    }
     </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white p-2 fixed-top" style="box-shadow: 0px 5px 10px -5px rgb(199, 206, 211);">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white p-2 fixed-top" style="box-shadow: 0px 5px 10px -5px rgb(199, 206, 211); ">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="logo.png" alt="" width="150"  class="d-inline-block align-text-top">
@@ -81,6 +187,15 @@
             </ul>
           </li>
         </ul>
+        <li class="d-flex nav-item " >
+                      
+          <a class="nav-link cus" style="color: rgb(68, 68, 68);" href="dashboard2.html">
+            <svg xmlns="http://www.w3.org/2000/svg" style="transform: translateY(-8%); margin-right: 10px; color:rgb(46, 80, 46)" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-spreadsheet" viewBox="0 0 16 16">
+              <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z"/>
+            </svg>
+            Import XCL file
+          </a>
+      </li>
       </div>
     </div>
   </nav>
@@ -259,96 +374,27 @@
   <br>
   <br>
   <br>
-  <footer class="text-center text-lg-start bg-light text-muted p-3">
+  <footer class="footer-distributed">
 
-    <!-- Section: Social media -->
-  
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Porbet
-            </h6>
-            <p>
-              Porbet , a company that makes something out of nothing
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Products
-            </h6>
-            <p>
-              <a href="https://porbet.github.io/cytocyber/" class="text-reset">Cytocyber</a>
-            </p>
-            <p>
-              <a href="https://porbet.github.io/streamjs/" class="text-reset">Strean.js</a>
-            </p>
-            <p>
-              <a href="https://porbet.github.io/opensource/" class="text-reset">Porbet keep</a>
-            </p>
-            <p>
-              <a href="https://porbet.github.io/opensource/" class="text-reset">Porbet todo</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
-            </h6>
-            <p>
-              <a href="index.html" class="text-reset">Home</a>
-            </p>
-            <p>
-              <a href="https://porbet.github.io/store/" class="text-reset">Store</a>
-            </p>
-            <p>
-              <a href="contact.html" class="text-reset">Contact</a>
-            </p>
-            <p>
-              <a href="privacy.html" class="text-reset">Privacy</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Contact
-            </h6>
-            <p><i class="fas fa-home me-3"></i> Nador, Morocco</p>
-            <p>
-              <i class="fas fa-envelope me-3"></i>
-              porbet.contact@gmail.com
-            </p>
-            <p><i class="fas fa-phone me-3"></i> + 212 638 397 172</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-4" >
-      © 2022 Copyright:
-      <a class="text-reset fw-bold" href="http://opensource-porbet.ga/">opensource-porbet.ga</a>
+    <div class="footer-right">
+        
+        <img src="logo.png" width="150px">
+
     </div>
-    <!-- Copyright -->
-  </footer>
+
+    <div class="footer-left">
+
+        <p class="footer-links">
+            <a class="link-1" href="index.html">Home</a>
+
+            <a href="about.html">About us</a>
+
+            <a href="https://porbet.github.io/contact.html">Contact us</a>
+        </p>
+
+        <p class="copy" style="font-weight:bold ;" >Made with ♥ by Porbet © 2023</p>
+    </div>
+</footer>
       <script>
         document.getElementById("name").innerHTML = localStorage.getItem("name");
 
